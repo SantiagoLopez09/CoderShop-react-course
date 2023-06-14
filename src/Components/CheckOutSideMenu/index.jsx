@@ -6,7 +6,6 @@ import "./styles.css";
 
 const CheckOutSideMenu = () => {
   const context = useContext(ShoppingCartContext)
-  console.log('CART', context.carProducts);
 
 
   return (
@@ -23,9 +22,9 @@ const CheckOutSideMenu = () => {
           onClick={() => context.closeCheckoutSideMeu()}></XMarkIcon>
         </div>
       </div>
-      <div className="px-6">
+      <div className="px-6 overflow-y-scroll">
       {
-        context.carProducts.map( product => (          
+        context.cartProducts.map( product => (          
           <OrderCard 
             key ={product.id}
             title ={product.title} 

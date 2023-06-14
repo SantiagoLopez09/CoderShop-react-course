@@ -26,7 +26,7 @@ export const ShoppingCartProvider = ({ children }) => {
   });
 
   // Shopping Cart - Add Products to Cart
-  const [carProducts, setCarProducts] = useState([])
+  const [cartProducts, setCartProducts] = useState([])
 
   
   return (
@@ -39,8 +39,8 @@ export const ShoppingCartProvider = ({ children }) => {
         isProductDetailOpen,
         productToShow,
         setProductToShow,
-        carProducts,
-        setCarProducts,
+        cartProducts,
+        setCartProducts,
         isCheckoutSideMeuOpen,
         openCheckoutSideMeu,
         closeCheckoutSideMeu,
