@@ -1,21 +1,22 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 import { ShoppingBagIcon } from '@heroicons/react/24/solid'
-import { NavLink } from "react-router-dom";
-import { ShoppingCartContext } from "../../Context";
+import { NavLink } from 'react-router-dom';
+import { ShoppingCartContext } from '../../Context';
 
 const Navbar = () => {
   const context = useContext(ShoppingCartContext);
-  const activeStyle = "underline underline-offset-4";
+  const activeStyle = 'underline underline-offset-4';
 
   return (
-    <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white">
-      <ul className="flex items-center gap-3">
-        <li className="font-semibold text-lg">
-          <NavLink to="/">Shopi</NavLink>
+    <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white'>
+      <ul className='flex items-center gap-3'>
+        <li className='font-semibold text-lg'>
+          <NavLink to='/'>Shopi</NavLink>
         </li>
         <li>
           <NavLink
-            to="/"
+            to='/'
+            onClick={() => context.setSearchByCategory()}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             All
@@ -23,7 +24,8 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/clothes"
+            to='/clothes'
+            onClick={() => context.setSearchByCategory('clothes')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Clothes
@@ -31,7 +33,8 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/electronics"
+            to='/electronics'
+            onClick={() => context.setSearchByCategory('electronics')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Electronics
@@ -39,7 +42,8 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/furnitures"
+            to='/furnitures'
+            onClick={() => context.setSearchByCategory('furniture')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Furnitures
@@ -47,7 +51,8 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/toys"
+            to='/toys'
+            onClick={() => context.setSearchByCategory('toys')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Toys
@@ -55,18 +60,19 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/others"
+            to='/others'
+            onClick={() => context.setSearchByCategory('others')}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Others
           </NavLink>
         </li>
       </ul>
-      <ul className="flex items-center gap-3">
+      <ul className='flex items-center gap-3'>
         <li className="text-black/60">santiagolopez@gmail.com</li>
         <li>
           <NavLink
-            to="/my-orders"
+            to='/my-orders'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             My Orders
@@ -74,7 +80,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/my-account"
+            to='/my-account'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             My Account
@@ -82,7 +88,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/sign-in"
+            to='/sign-in'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Sign In
@@ -91,7 +97,7 @@ const Navbar = () => {
         <li className='flex items-center'>
           <ShoppingBagIcon className='h-6 w-6 text-black'></ShoppingBagIcon>
           <div>
-            {context.count}
+            {context.cartProducts.length}
           </div>
         </li>
       </ul>
