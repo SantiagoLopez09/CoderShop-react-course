@@ -15,7 +15,6 @@ const Card = (data) => {
     context.setCount(context.count + 1)
     context.setCarProducts([...context.carProducts, productData])
     context.openCheckoutSideMeu()
-    console.log('CART', context.carProducts);
   }
   return (
     <div
