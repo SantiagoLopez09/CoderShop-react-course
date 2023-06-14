@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 import {Link} from 'react-router-dom'
-import { XMarkIcon } from "@heroicons/react/24/solid";
-import { ShoppingCartContext } from "../../Context";
+import { XMarkIcon } from '@heroicons/react/24/solid';
+import { ShoppingCartContext } from '../../Context';
 import OrderCard from '../../Components/OrderCard'
-import { totalPrice } from "../../utils";
-import "./styles.css";
+import { totalPrice } from '../../utils';
+import './styles.css';
 
 const CheckOutSideMenu = () => {
   const context = useContext(ShoppingCartContext)
@@ -37,7 +37,7 @@ const CheckOutSideMenu = () => {
         <h2 className="font-medium text-xl">My Order</h2>
         <div>
           <XMarkIcon 
-          className="h-6 w-6 text-black cursor-pointer"
+          className='h-6 w-6 text-black cursor-pointer'
           onClick={() => context.closeCheckoutSideMeu()}></XMarkIcon>
         </div>
       </div>
