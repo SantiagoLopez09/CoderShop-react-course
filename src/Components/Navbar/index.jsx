@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
-import { ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { ShoppingCartContext } from '../../Context'
 import ShoppingCart from '../Shopping Cart'
 
@@ -72,7 +71,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
+    <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white'>
       <ul className='flex items-center gap-3'>
         <li className='font-semibold text-lg'>
           <NavLink to={`${isUserSignOut ? '/sign-in' : '/'}`}>
@@ -112,7 +111,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to='/furnitures'
-            onClick={() => context.setSearchByCategory('furnitures')}
+            onClick={() => context.setSearchByCategory('furniture')}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }>
