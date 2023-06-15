@@ -131,15 +131,11 @@ const [searchByCategory, setSearchByCategory] = useState(null)
         setSearchByTitle,
         filteredItems,
         searchByCategory,
-<<<<<<< HEAD
         setSearchByCategory,
         account,
         setAccount,
         signOut,
         setSignOut,
-=======
-        setSearchByCategory
->>>>>>> e2ef58b7835872b874b97bc2a319405729ac01c2
       }}
     >
       {children}
